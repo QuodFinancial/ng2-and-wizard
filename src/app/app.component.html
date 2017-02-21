@@ -1,3 +1,22 @@
-<h1>
-  {{title}}
-</h1>
+<!-- https://developer.mozilla.org/fr/docs/Web/HTML/Element/Form#attr-novalidate -->
+
+<section fxLayout="row" fxLayoutAlign="center center">
+  <md-card fxFlex="25%">
+    <form #wizardForm="ngForm" (ngSubmit)="onSubmit(wizardForm)" fxLayout="column" novalidate>
+      <h1>First step</h1>
+
+      <md-input-container>
+        <input type="text" name="firstname" placeholder="Firstname" ngModel mdInput required>
+      </md-input-container>
+
+      <md-input-container>
+        <input type="text" name="lastname" placeholder="Lastname" ngModel mdInput required>
+      </md-input-container>
+
+      <div fxLayout="row" fxLayoutAlign="space-between center">
+        <button md-button>Prev</button>
+        <button type="submit" [disabled]="wizardForm.invalid" md-button>Next</button>
+      </div>
+    </form>
+  </md-card>
+</section>
