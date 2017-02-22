@@ -1,22 +1,36 @@
-<!-- https://developer.mozilla.org/fr/docs/Web/HTML/Element/Form#attr-novalidate -->
+<md-sidenav-container>
+  <md-sidenav #sidenav mode="over">
+    <md-list>
+      <md-list-item fxLayout="column">
+        <button md-button *ngFor="let _ of [0, 1, 2, 3, 4, 5]">
+          Button {{ _ }}
+        </button>
+      </md-list-item>
+    </md-list>
+  </md-sidenav>
 
-<section fxLayout="row" fxLayoutAlign="center center">
-  <md-card fxFlex="25%">
-    <form #wizardForm="ngForm" (ngSubmit)="onSubmit(wizardForm)" fxLayout="column" novalidate>
-      <h1>First step</h1>
+  <div class="app-content" fxLayout="column">
+    <md-toolbar>
+      <button md-icon-button (click)="sidenav.open()">
+        <md-icon>menu</md-icon>
+      </button>
+      <span>Babyfoot</span>
+    </md-toolbar>
 
-      <md-input-container>
-        <input type="text" name="firstname" placeholder="Firstname" ngModel mdInput required>
-      </md-input-container>
+    <!-- route view -->
+    <section>
+      <article *ngFor="let _ of [0, 1, 2, 3, 4, 5]">
+        <h1>Titre</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid molestias dignissimos doloremque iste ipsa! Molestias aut obcaecati et doloremque inventore voluptatum soluta consequatur sed beatae, itaque perferendis odio, ipsum eius.
+        </p>
+      </article>
+    </section>
+  </div>
+</md-sidenav-container>
 
-      <md-input-container>
-        <input type="text" name="lastname" placeholder="Lastname" ngModel mdInput required>
-      </md-input-container>
-
-      <div fxLayout="row" fxLayoutAlign="space-between center">
-        <button md-button>Prev</button>
-        <button type="submit" [disabled]="wizardForm.invalid" md-button>Next</button>
-      </div>
-    </form>
-  </md-card>
-</section>
+<style>
+  .app-content {
+    height: 100%;
+  }
+</style>
