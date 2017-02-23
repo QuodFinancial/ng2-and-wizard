@@ -7,15 +7,18 @@ import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 import { RouterModule } from '@angular/router';
 
+import { PlayerModule } from './widgets/player/player.module';
+
 import { AppComponent } from './app.component';
-import { PlayersComponent } from './players/players.component';
+import { PlayersComponent } from './views/players/players.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PlayersComponent
+    PlayersComponent,
   ],
   imports: [
+    // Angular and external modules
     BrowserModule,
     FlexLayoutModule,
     FormsModule,
@@ -25,6 +28,9 @@ import { PlayersComponent } from './players/players.component';
       { path: 'players', component: PlayersComponent },
       // { path: '', component: _ },
     ]),
+
+    // Widgets modules
+    PlayerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
