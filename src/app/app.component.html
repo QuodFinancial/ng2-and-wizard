@@ -1,36 +1,7 @@
-<md-sidenav-container>
-  <md-sidenav #sidenav mode="over">
-    <md-list>
-      <md-list-item fxLayout="column">
-        <button md-button *ngFor="let _ of [0, 1, 2, 3, 4, 5]">
-          Button {{ _ }}
-        </button>
-      </md-list-item>
-    </md-list>
-  </md-sidenav>
+<md-toolbar color="primary">
+  <span routerLink="/" class="toolbar-title">Babyfoot</span>
+  <!--<span class="spacer"></span>-->
+  <button md-button routerLink="/players">Players</button>
+</md-toolbar>
 
-  <div class="app-content" fxLayout="column">
-    <md-toolbar>
-      <button md-icon-button (click)="sidenav.open()">
-        <md-icon>menu</md-icon>
-      </button>
-      <span>Babyfoot</span>
-    </md-toolbar>
-
-    <!-- route view -->
-    <section>
-      <article *ngFor="let _ of [0, 1, 2, 3, 4, 5]">
-        <h1>Titre</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid molestias dignissimos doloremque iste ipsa! Molestias aut obcaecati et doloremque inventore voluptatum soluta consequatur sed beatae, itaque perferendis odio, ipsum eius.
-        </p>
-      </article>
-    </section>
-  </div>
-</md-sidenav-container>
-
-<style>
-  .app-content {
-    height: 100%;
-  }
-</style>
+<router-outlet></router-outlet>
