@@ -16,6 +16,9 @@ export class PlayersListComponent implements OnInit {
   @Input()
   players: Player[];
 
+  @Input()
+  filterBy: string;
+
   constructor() { }
 
   ngOnInit() { }
