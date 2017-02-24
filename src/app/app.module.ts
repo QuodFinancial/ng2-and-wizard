@@ -26,7 +26,6 @@ import { PlayersComponent } from './views/players/players.component';
     MaterialModule,
     RouterModule.forRoot([
       { path: 'players', component: PlayersComponent },
-      // { path: '', component: _ },
     ]),
 
     // Widgets modules

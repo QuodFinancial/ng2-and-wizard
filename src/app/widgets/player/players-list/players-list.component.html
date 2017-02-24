@@ -1,3 +1,6 @@
-<p>
-  players-list works!
-</p>
+<md-list>
+  <md-list-item *ngFor="let player of players">
+    <img md-list-avatar [src]="player.avatarUrl" alt="player avatar">
+    <h3 md-line>{{ player.name }}</h3>
+  </md-list-item>
+</md-list>

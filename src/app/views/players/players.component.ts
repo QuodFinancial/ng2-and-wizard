@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Player } from '../../player';
+import { PlayersService } from '../../players.service';
+
 @Component({
   selector: 'app-players',
   templateUrl: './players.component.html',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlayersComponent implements OnInit {
 
-  constructor() { }
+  playersCollection: Player[];
 
-  ngOnInit() {
+  constructor(playersService: PlayersService) {
+    this.playersCollection = playersService.getCollection();
   }
+
+  ngOnInit() { }
 
 }
