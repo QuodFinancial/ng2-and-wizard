@@ -5,17 +5,13 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
-import { RouterModule } from '@angular/router';
-
-import { PlayerModule } from './widgets/player/player.module';
 
 import { AppComponent } from './app.component';
-import { PlayersComponent } from './views/players/players.component';
+import { PlayersModule } from './players/players.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PlayersComponent,
   ],
   imports: [
     // Angular and external modules
@@ -24,12 +20,9 @@ import { PlayersComponent } from './views/players/players.component';
     FormsModule,
     HttpModule,
     MaterialModule,
-    RouterModule.forRoot([
-      { path: 'players', component: PlayersComponent },
-    ]),
 
-    // Widgets modules
-    PlayerModule,
+    // Feature modules
+    PlayersModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
