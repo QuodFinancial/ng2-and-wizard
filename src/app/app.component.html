@@ -1,6 +1,24 @@
-<md-toolbar color="primary">
-  <span class="toolbar-title">Babyfoot</span>
-  <button md-button routerLink="/players">Players</button>
-</md-toolbar>
+<md-sidenav-container>
+  <md-sidenav #sidenav>
+    <md-nav-list>
+      <a md-list-item routerLink="/players">Players</a>
+    </md-nav-list>
+  </md-sidenav>
 
-<router-outlet></router-outlet>
+  <md-toolbar color="primary">
+    <button md-icon-button (click)="sidenav.toggle()">
+      <md-icon>menu</md-icon>
+    </button>
+    <span class="toolbar-title">Babyfoot</span>
+    <span class="spacer"></span>
+    <button md-button routerLink="/players">Players</button>
+  </md-toolbar>
+
+  <router-outlet></router-outlet>
+</md-sidenav-container>
+
+<style>
+  :host, md-sidenav-container {
+    height: 100%;
+  }
+</style>

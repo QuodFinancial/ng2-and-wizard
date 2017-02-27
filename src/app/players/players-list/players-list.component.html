@@ -2,8 +2,16 @@
   Filter by: {{ filterBy }}
 </pre>
 <md-nav-list>
-  <md-list-item *ngFor="let player of players" (click)="null">
-    <img md-list-avatar [src]="player.avatarUrl" alt="player avatar">
-    <a md-line>{{ player.name }}</a>
-  </md-list-item>
+  <!--
+    Documentation: https://angular.io/docs/ts/latest/api/common/index/NgFor-directive.html
+    Meh... the documentation does not tell you that the "let-item" attribute will create an "item" local variable.
+    And since the API has changed 25.685.624 times sinces last version, online resources are not relevant anymore. Sad!
+  -->
+  <template ngFor let-item [ngForOf]="players">
+    <md-list-item (click)="null">
+      <img md-list-avatar [src]="item.avatarUrl" alt="item avatar">
+      <a md-line>{{ item.name }}</a>
+    </md-list-item>
+    <md-divider></md-divider>
+  </template>
 </md-nav-list>
