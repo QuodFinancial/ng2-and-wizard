@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { MaterialModule } from '@angular/material';
+import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { playersRouting } from './players-routing.module';
@@ -11,6 +12,7 @@ import { PlayersListComponent } from './players-list/players-list.component';
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
     MaterialModule,
     RouterModule.forRoot(playersRouting),
   ],
